@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+
+
+    <!-- google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+        <!-- favicon -->
+        <link rel="icon" href="./img/pokeball.png" type="image/x-icon">
+
+        <title>Pokedex</title>
+</head>
+<body onload="loadingScreen(loadFirst(20))">
+
+
+        <!-- pokemon-detail-view container -->
+        <div class="pokemon-detail-view_background-div display-none" onclick="closeDetailView()"></div>
+
+        <div class="pokemon-detail-view_frame detail-view-positioning display-none">
+
+            <span>
+                <h1 id="detail-view-pokeName"></h1>
+            </span>
+
+            <div class="detail-view-content w100">
+                <div class="detail-view-stats detail-view-stats">
+                    <div style="justify-content: space-between;" class="tool dpflex w100">
+                        <div style="align-items: flex-start;" class="dpflex-column">
+                            <img src="./img/pokeball.png" alt="pokemon-img">
+                            <div id="type-frame" class="dpflex">
+
+                            </div>
+                        </div>  
+                        <nav class="detail-view_nav-bar dpflex">
+                            <div onclick="selectNavItem(0), renderStats()" id="stats-a-div" class="highlight-link-div-border" ><a id="nav-a-stats" class="color-red">Stats</a></div>
+                            <div onclick="selectNavItem(1), renderAbilitys()" id="abilitys-a-div"><a id="nav-a-abilitys">Abilitys</a></div>
+                            <div onclick="selectNavItem(2), renderEvolutions()" id="evolutions-a-div"><a id="nav-a-evolutions">Evolutions</a></div>
+                        </nav>
+                    </div>
+                    <div id="detail-view_render-content" class="p-16">
+                        <div style="height: 100%;" class="evolutions-frame">
+                                 <img src="./img/pokeball.png" alt="">
+                                 <img src="./img/angles-right-solid.svg" alt="">
+                                 <img src="./img/pokeball.png" alt="">
+                                 <img src="./img/angles-right-solid.svg" alt="">
+                                 <img src="./img/pokeball.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <img id="detail-view_pokeball-background" class="pokemon-detail-view_pokeball-background" src="./img/pokeball.png" alt="">
+        </div>
+
+
+        <!-- pokemon search -->
+        <section class="section-padding">
+            <div id="header" style="justify-content: space-around!important;" class="section-content-div dpflex">
+                <img onclick="loadingScreen(loadFirst(20))" src="./img/pokeball.png" class="loadAllPokemonball" style="height: 48px;" alt="Load Gen1">
+                <form class="m-16" action="#" onsubmit="searchPokemonOnChange()" onkeydown="searchPokemonOnKeyDown();">
+                    <input class="m-r16" minlength="2" required type="text" placeholder="Charmander" id="search-input"><button type="submit">Suche starten</button>
+                </form>
+            </div>
+        </section>
+        <div id="content" class="content">
+
+
+            <!-- pokemon display -->
+    
+        </div>    
+
+        <!-- tool - div -->
+        <div id="tool">
+        </div>
+
+        <!-- arrow | scroll to top -->
+        <div id="arrow" class="arrow display-none">
+            <img onclick="scrollToHeader()" src="./arrow.svg" alt="nach oben">
+        </div>
+
+    <script src="./pokemonNames.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>

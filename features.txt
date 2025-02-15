@@ -1,0 +1,38 @@
+this pokedex needs:
+
+a search funktions wich load the searched pokemon into the pokecard
+
+a list funktion wich shows all pokemon at once in a mini pokecard
+
+a sort funktion wichs sorts the displayed pokemon in the list in generations
+
+the pokecard has a title, img, if evolutions -> evolutions imgs else -> no evolutions for this pokemon,
+
+pokemon wird geladen -> evolutionstask -> load evolutions details -> render evolutions details
+
+render evolutions detail = 
+add current pokemon img -> 
+    add arrow ->
+add pokemon evo bild 0 ->
+    add arrow ->
+pokemon evo bild 1 ->
+
+currentPokemonEvolution['chain']['species']['name'] clicked pokemon name
+
+currentPokemonEvolution['chain']['evolves_to'][0]['species']['name'] first into evolution
+
+currentPokemonEvolution['chain']['evolves_to'][0]['evolves_to'][0]['species']['name']
+
+let person = [
+    name: 'gundula',
+    child: {
+        name: 'hans',
+        child: {
+            name: 'patrick',
+            child: {
+                name: 'gustav'
+            }
+        }
+    }
+]
+
